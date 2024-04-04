@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="175.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.component.UserProfileWidget">
+   <children>
+      <ImageView fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/D1-1.jpg" />
+         </image>
+      </ImageView>
+      <Line endX="170.0" fill="GAINSBORO" layoutY="120.0" startX="100.0" stroke="GAINSBORO" />
+      <Line endX="75.0" fill="GAINSBORO" layoutY="120.0" startX="5.0" stroke="GAINSBORO" />
+      <Line endY="45.0" layoutX="88.0" layoutY="125.0" startY="8.0" stroke="GAINSBORO" />
+      <ImageView fx:id="centerClockIconImageView" fitHeight="15.0" fitWidth="15.0" layoutX="80.0" layoutY="113.0" pickOnBounds="true" />
+      <Label fx:id="fullNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="175.0" text="-" textAlignment="CENTER" textFill="#383838" wrapText="true">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </Label>
+      <ImageView fx:id="profilePictureImageView" fitHeight="64.0" fitWidth="64.0" layoutX="58.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+      <Label alignment="CENTER" layoutY="130.0" prefHeight="16.0" prefWidth="85.0" text="Company Time" textAlignment="CENTER" textFill="#737373">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="90.0" layoutY="130.0" prefHeight="16.0" prefWidth="85.0" text="User Time" textFill="#737373">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="companyTimeLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="144.0" prefHeight="20.0" prefWidth="85.0" style="-fx-font-weight: 400;" text="00:00" textAlignment="CENTER" textFill="#5e5e5e">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="userTimeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="144.0" prefHeight="20.0" prefWidth="85.0" style="-fx-font-weight: 400;" text="00:00" textAlignment="CENTER" textFill="#5e5e5e">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

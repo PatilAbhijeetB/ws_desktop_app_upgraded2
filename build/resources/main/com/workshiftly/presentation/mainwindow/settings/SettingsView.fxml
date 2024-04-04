@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.SVGPath?>
+
+
+<Pane maxHeight="-Infinity" layoutX="0.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1063.0" style="-fx-background-color: white;  -fx-background-radius: 30px" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.settings.SettingsView">
+   <children>
+      <Pane layoutX="25.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="1016.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.02), 20, 0, 0, 0);">
+         <children>
+            <HBox alignment="CENTER" layoutX="13.0" layoutY="9.0" prefHeight="58.0" prefWidth="58.0" style="-fx-background-color: #3E5BF2; -fx-background-radius: 100;">
+               <children>
+                  <ImageView fx:id="userProfileImageView" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" />
+               </children>
+            </HBox>
+            <Label fx:id="userNameLabel" layoutX="79.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="142.0" text="James Smith" textFill="#000000">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="userEmailLabel" layoutX="79.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="142.0" text="jamessmith91@gmail.com" textFill="#000000">
+               <font>
+                  <Font size="10.0"/>
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="25.0" layoutY="95.0" prefHeight="400.0" prefWidth="731.0" style="-fx-background-color: #ffff; -fx-background-radius: 20; -fx-box-shadow: 6 10 35 0 rgba(0, 0, 0, 0.02);">
+         <children>
+            <TabPane fx:id="parentTabPane" layoutX="5.0" layoutY="9.0" prefHeight="300.0" prefWidth="721.0" style="-fx-tab-min-height: 2.4em;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Password Reset">
+                     <content>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="721.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Pane layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="731.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <Label layoutX="18.0" layoutY="19.0" text="Change Password" textFill="#1a181880">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="6.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="239.0">
+                                       <children>
+                                          <Label layoutX="15.0" layoutY="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="188.0" text="Current Password" textFill="#1c1a1a">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <PasswordField fx:id="currentPWTextInput" layoutX="15.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="210.0" style="-fx-border-color: #CACED8; -fx-border-radius: 8; -fx-background-color: transparent; -fx-background-radius: 8px;" />
+                                          <Label fx:id="currentPWErrorLabel" alignment="TOP_LEFT" layoutX="15.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" text="Error Error Error Error Error Error Error" textFill="#f51f1f" wrapText="true">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="245.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="248.0">
+                                       <children>
+                                          <ImageView fx:id="passwordTooltipImg" fitHeight="16.0" fitWidth="16.0" layoutX="125.0" pickOnBounds="true" preserveRatio="true" >
+                                              <image>
+                                                    <Image url="@../../../../../images/tooltip.png" />
+                                                </image>
+                                            </ImageView>
+                                       
+                                          <Label fx:id="newPasswordLabel" layoutX="15.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="100.0" text="New Password" textFill="#1c1a1a">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <PasswordField fx:id="newPWTextInput" layoutX="15.0" layoutY="20.0" prefHeight="36.0" prefWidth="210.0" style="-fx-border-color: #CACED8; -fx-border-radius: 8; -fx-background-color: transparent; -fx-background-radius: 8px;">
+                                                <font>
+                                                      <Font size="12.0" />
+                                                </font>
+                                          </PasswordField>
+                                          <TextField fx:id="newpasswordshow"  layoutX="15.0" layoutY="20.0" prefHeight="36.0" prefWidth="210.0" style="-fx-border-color: #CACED8; -fx-border-radius: 8; -fx-background-color: transparent; -fx-background-radius: 8px;">
+                                                <font>
+                                                   <Font size="12.0" />
+                                                </font>
+                                          </TextField>
+                                           <Button fx:id="eyeButton" layoutX="180.0" layoutY="22.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;">
+                                                <graphic>                       
+                                                          <ImageView fx:id="eyeLogo" layoutX="180.0" layoutY="10.0" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                 <Image url="@../../../../../images/eyeOpen.png" />
+                                                              </image>
+                                                           </ImageView>
+                                                </graphic>
+                                            </Button>
+                                          
+                                          
+                                          
+                                          <Label fx:id="newPWErrorLabel" alignment="TOP_LEFT" layoutX="15.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="212.0" text="Error Error Error Error Error Error Error" textFill="#f51f1f" wrapText="true">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font>
+                                          </Label>
+                                          <Pane layoutX="240.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="238.0">
+                                             <children>
+                                                <Label layoutX="15.0" layoutY="-8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="198.0" text="Re-Enter Password" textFill="#1c1a1a">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <PasswordField fx:id="retypePWTextInput" layoutX="15.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="210.0" style="-fx-border-color: #CACED8; -fx-border-radius: 8; -fx-background-color: transparent; -fx-background-radius: 8px;" />
+                                                 <TextField fx:id="reppasswordshow"  layoutX="15.0" layoutY="18.0" prefHeight="36.0" prefWidth="210.0" style="-fx-border-color: #CACED8; -fx-border-radius: 8; -fx-background-color: transparent; -fx-background-radius: 8px;">
+                                                <font>
+                                                   <Font size="12.0" />
+                                                </font>
+                                          </TextField>
+                                           <Button fx:id="repeyeButton" layoutX="180.0" layoutY="22.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;">
+                                                <graphic>                       
+                                                          <ImageView fx:id="repeyeLogo" layoutX="180.0" layoutY="10.0" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                 <Image url="@../../../../../images/eyeOpen.png" />
+                                                              </image>
+                                                           </ImageView>
+                                                </graphic>
+                                            </Button>
+                                          
+                                                
+                                                <Label fx:id="retypePWErrorLabel" alignment="TOP_LEFT" layoutX="16.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="210.0" text="Error Error Error Error Error Error Error" textFill="#f51f1f" wrapText="true">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="22.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="280.0" style="-fx-background-color: transparent;">
+                                       <children>
+                                          <Button fx:id="pwUpdateBtn" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" styleClass="dialog-modal-primary-btn"  prefWidth="120.0" text="Update" >
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="clearPWChangeFormBtn" layoutX="145.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" styleClass="dialog-modal-primary-btn"  prefWidth="120.0" text="Clear" >
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+                <Tab text="Work Schedule">
+                     <content>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="720.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Pane layoutX="20.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="500.0" style="-fx-background-color: #ECEFFE; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fx:id="scheduleNameIconImg" fitHeight="16.0" fitWidth="16.0" layoutX="20.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label layoutX="46.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Schedule Name" textAlignment="CENTER" textFill="#707070">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="scheduleNameLabel" alignment="CENTER_LEFT" contentDisplay="LEFT" layoutX="156.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="300.0" text="SS/slt/Mon 8:00 - Wed 17:00" textAlignment="LEFT" textFill="#707070" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="25.0" layoutY="80.0" prefHeight="300.0" prefWidth="650.0">
+                                 <children>
+                                    <Label text="Schedule Details" textFill="#707070" />
+                                    <TableView fx:id="scheduleDetailsTableView" layoutY="26.0" prefHeight="300.0" prefWidth="650.0">
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="noWorkSchedulesPane" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="700.0" style="-fx-background-color: rgba(255, 255, 255, 0.7);">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="200.0" text="No work schedules found!" textAlignment="CENTER" textFill="#707070" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="appUpdateTab" text="App Update">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="350.0" prefWidth="540.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0">
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Label text="Latest App Version:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="latestAppVersionLbl" text="V1.4.2" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label text="Current App Version:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="currentAppVersionLbl" text="V1.4.2" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <Pane prefHeight="50.0" prefWidth="100.0">
+                                             <children>
+                                                <VBox prefHeight="40.0" prefWidth="420.0">
+                                                   <children>
+                                                      <HBox>
+                                                         <children>
+                                                            <ImageView fx:id="downloadImgView" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                                                            <Label alignment="CENTER" prefHeight="15.0" prefWidth="380.0" text="A new version of WorkShiftly is available">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                         </padding>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </Pane>
+                                          <HBox layoutX="1.0">
+                                             <children>
+                                                <Label prefHeight="20.0" text="Visit">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Hyperlink text="https://workshiftly.com/#/downloads">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                                <Label layoutX="10.0" layoutY="10.0" prefHeight="20.0" text="to download the latest version.">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <graphic>
+                        <ImageView fx:id="appUpdateAlert" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+      <Pane fx:id="loadingSpinner" prefHeight="390.0" prefWidth="540.0" style="-fx-background-color: rgba(255, 255, 255, 0.5);" visible="false">
+         <children>
+            <ImageView fx:id="loadingSpinnerImg" fitHeight="120.0" fitWidth="120.0" layoutX="210.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# software name
+PACKAGE_NAME="workshiftly";
+
+# add preinstall scripts in this file
+
+
+
+echo "### preinstall script"

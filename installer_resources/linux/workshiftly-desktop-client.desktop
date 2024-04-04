@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=workshiftly-desktop-client
+Comment=workshiftly-desktop-client
+Exec=/opt/workshiftly-desktop-client/bin/workshiftly-desktop-client
+Icon=/opt/workshiftly-desktop-client/lib/workshiftly-desktop-client.png
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+StartupWMClass=com.workshiftly.application.MainApplication

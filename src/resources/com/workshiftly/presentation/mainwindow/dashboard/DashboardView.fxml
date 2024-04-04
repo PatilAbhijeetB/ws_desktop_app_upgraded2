@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<!-- <Pane maxHeight="-Infinity" layoutX="10.0" maxWidth="-Infinity" minHeight="-Infinity" 
+   minWidth="-Infinity" prefHeight="500.0" prefWidth="790.0"
+   styleClass="auth-screen-root-wrapper" style="-fx-background-color: #fffff;  -fx-background-radius: 30px;"
+   xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.workshiftly.presentation.mainwindow.dashboard.DashboardView"
+>
+   <children>
+      <Pane layoutX="10.0" layoutY="24.0" prefHeight="58.0" prefWidth="350.0">
+         <children>
+                     <Pane layoutX="160.0" layoutY="6.0">
+            <HBox spacing="20.0">
+               <children>
+                  <Pane fx:id="productivityWidgetPane" prefHeight="165.0" prefWidth="340.0" >
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Pane>
+                  <Pane fx:id="attendanceWidgetPane" prefHeight="160.0" prefWidth="175.0" style="-fx-background-radius: 10; -fx-background-color: white;" />
+               </children>
+            </HBox>
+            <Pane fx:id="activitySummaryWidgetPane" layoutY="190.0" prefHeight="200.0" prefWidth="540.0" style="-fx-background-radius: 10; -fx-background-color: white;" />
+         </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane> -->
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1063.0" style="-fx-background-color: #F8F8F8;  -fx-background-radius: 30px;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.dashboard.DashboardView">
+      <children>
+      <Pane layoutX="24.0" layoutY="24.0" prefHeight="58.0" prefWidth="350.0">
+               <children>
+                  <HBox layoutX="-9.0" layoutY="-9.0" prefHeight="409.0" prefWidth="1034.0" spacing="20.0">
+                     <children>
+                        <Pane prefHeight="400.0" prefWidth="500.0">
+                           <children>
+                              <Pane fx:id="productivityWidgetPane" prefHeight="400.0" prefWidth="500.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="300.0" prefWidth="500.0">
+                           <children>
+                              <Pane fx:id="activitySummaryWidgetPane" layoutX="1.0" layoutY="1.0" prefHeight="600.0" prefWidth="500.0">
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+      </Pane>
+   </children>
+</Pane>

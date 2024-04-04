@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="rootWrapper" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="130.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.component.ActivityLogListItem">
+   <children>
+      <HBox>
+         <children>
+            <Label fx:id="timeLbl" alignment="CENTER" prefHeight="40.0" prefWidth="60.0" text="16:30 pm" textFill="#737373">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="activityStatusLbl" alignment="CENTER" prefHeight="40.0" prefWidth="70.0" text="BREAK" textFill="#737373">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</Pane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="rootWrapper" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.factory.popdialogheading.PopupDialogButtonLayout">
+   <children>
+      <HBox fx:id="leftWrapper" alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="180.0" style="-fx-background-color: white;">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <children>
+            <JFXButton fx:id="dialogBtn3" buttonType="RAISED" style="-fx-background-color: #3E5BF2; -fx-font-weight: bold; -fx-font-size: 14px; -fx-border-radius: 5px; -fx-margin: 10px; -fx-padding: 10px;" text="button3" textAlignment="CENTER" wrapText="true"  textFill="#FFFFFF">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox fx:id="rightWrapper" alignment="CENTER_RIGHT" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton fx:id="dialogBtn2" buttonType="RAISED" style="-fx-background-color: #3E5BF2; -fx-font-weight: bold; -fx-font-size: 14px; -fx-border-radius: 5px; -fx-margin: 10px; -fx-padding: 10px;" text="button 02" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" textFill="#FFFFFF">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="dialogBtn1" buttonType="RAISED" style="-fx-background-color: #3E5BF2; -fx-font-weight: bold; -fx-font-size: 14px; -fx-border-radius: 5px; -fx-margin: 10px; -fx-padding: 10px;" text="Button 01" textAlignment="CENTER" wrapText="true" textFill="#FFFFFF" >
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </HBox>
+   </children>
+</HBox>

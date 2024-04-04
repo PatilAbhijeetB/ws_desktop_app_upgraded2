@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="400.0" prefWidth="500.0" style="-fx-border-color: #FFFFFF; -fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.dashboard.ActivitySummaryWidget">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="15.0" layoutY="15.0" text="Activity Summary" textFill="#1c1a1a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutX="314.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="152.0">
+               <children>
+                  <DatePicker fx:id="weekPicker" opacity="0.75" editable="false" prefHeight="27.0" prefWidth="162.0" promptText="Pick week" showWeekNumbers="true" style="-fx-border-color: #805ADD; -fx-border-radius: 6; -fx-background-radius: 6; -fx-background-color: transparent; -fx-prompt-text-fill: #805ADD;" />
+               </children>
+            </Pane>
+            <HBox layoutY="55.0" prefHeight="300.0" prefWidth="600.0">
+               <children>
+                  <PieChart fx:id="summaryChart" labelsVisible="false" legendSide="RIGHT" prefHeight="300.0" prefWidth="300.0" />
+                  <VBox fx:id="legendContainer" layoutY="74.0" alignment="CENTER" prefHeight="300.0" prefWidth="100.0">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Pane fx:id="noDataPane" layoutY="54.0" prefHeight="346.0" prefWidth="500.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="13.0" prefHeight="321.0" prefWidth="500.0" text="No Data Available" textFill="#828282">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="loadingSpinner" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="512.0" style="-fx-background-color: rgba(255, 255, 255, 0.5); -fx-background-radius: 10;" visible="false">
+         <children>
+            <ImageView fx:id="loadingSpinnerImg" fitHeight="120.0" fitWidth="120.0" layoutX="196.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

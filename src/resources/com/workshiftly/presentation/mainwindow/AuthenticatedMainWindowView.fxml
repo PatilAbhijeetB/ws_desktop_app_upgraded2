@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="rootWrapper" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1063.0" style="-fx-background-color: #F3F5F7;" styleClass="mainwindow-root-wrapper" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.AuthenticatedMainWindowView">
+    <children>
+        <Pane fx:id="navbarHeaderWrapper" prefHeight="200.0" prefWidth="1063.0" styleClass="mainwindow-to-navbar">
+            <children>
+                <Pane fx:id="mainwindowLogoWrapper" prefHeight="72.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fx:id="companyLogo" fitWidth="160.0" layoutX="30.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../images/logowork.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <HBox fx:id="navMenuItemWrapper" layoutX="300.0" layoutY="30.0" prefHeight="60.0" prefWidth="1063.0" />
+                <Pane fx:id="pnlName" layoutX="30.0" layoutY="100.0">
+                    <children>
+                        <Label fx:id="fullNameLabel" styleClass="auth-NameTitle-label" text="">
+                            <font>
+                                <Font name="System Bold" />
+                            </font>
+         
+                        </Label>
+                    
+                    </children>
+                </Pane>
+            
+            </children>
+        </Pane>
+      
+        <Pane fx:id="breadcumbWrapper" layoutX="460.0" layoutY="80.0" prefHeight="60.0" prefWidth="550.0">
+            <children>
+                <Pane fx:id="workedTimeWrapper" layoutX="370.0" layoutY="5.0" prefHeight="45.0" prefWidth="160.0" style="-fx-background-radius: 25;">
+                    <children>
+                        <Label fx:id="workedTimeCounterLbl" layoutX="20.0" layoutY="20.0" text="08:20:40" textFill="#FFFFFF">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="25.0" layoutY="0.0" fx:id="WorkedTime" text="Worked Time" textFill="#F7F7F7">
+                            <font>
+                                <Font size="14.0" name="Rubik" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Button fx:id="timerButton" layoutX="500.0" layoutY="5.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="44.0" style="-fx-background-color: #687DEA; -fx-background-radius: 50;">
+                    <graphic>
+                        <ImageView fx:id="timeBtnImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                    </graphic>
+                </Button>
+           
+            </children>
+        </Pane>
+        <StackPane fx:id="navigationContentWrapper" layoutX="1.0" layoutY="145.0" prefHeight="420.0" prefWidth="1063.0" style="-fx-background-color: #ffffff; -fx-background-radius: 40;" />
+    </children>
+</Pane>

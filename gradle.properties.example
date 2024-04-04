@@ -1,0 +1,26 @@
+# Generally it is better to set the version only for release builds, build time
+# from command line using -Pversion=0.2.0
+#
+# Only use SNAPSHOT versions if you need to contribute your binaries to a
+# local Maven project.
+version=1.4.5
+
+# current build platform value from one of [ linux, windows, macos ]
+build_platform_type=linux
+
+# default javaHome jdk path for build the project [ *** mandatory *** ]
+# required to use openjdk 14 or above
+default_javaHome=/usr/lib/jvm/openjdk-14/
+
+# build release environment (either one of value in [ production, staging, development ]
+release_environment=production
+
+# jdk download links (please use the link openJDK 14 or above) - keep all version same
+openjdk_linux_download_link=https://download.java.net/java/GA/jdk14.0.2/205943a0976c4ed48cb16f1043c5c647/12/GPL/openjdk-14.0.2_linux-x64_bin.tar.gz
+openjdk_windows_download_link=https://download.java.net/java/GA/jdk14.0.2/205943a0976c4ed48cb16f1043c5c647/12/GPL/openjdk-14.0.2_windows-x64_bin.zip
+openjdk_macos_download_link=https://download.java.net/java/GA/jdk14.0.2/205943a0976c4ed48cb16f1043c5c647/12/GPL/openjdk-14.0.2_osx-x64_bin.tar.gz
+# jdk version
+openjdk_version=jdk-14.0.2
+
+
+

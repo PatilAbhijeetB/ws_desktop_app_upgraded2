@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="rootWrapper" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="150.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.meeting.ParticipantListItem">
+   <children>
+      <RadioButton fx:id="participantRadioBtn" mnemonicParsing="false" prefWidth="150.0" text="Chamara Munasinghe" HBox.hgrow="NEVER">
+         <HBox.margin>
+            <Insets left="5.0" right="5.0" />
+         </HBox.margin>
+         <font>
+            <Font size="10.0" />
+         </font>
+      </RadioButton>
+   </children>
+</HBox>

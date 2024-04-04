@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="rootWrapper" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefWidth="550.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.factory.popdialogheading.PopupDialogLayoutView" >
+   <children>
+      <Pane prefWidth="500.0" >
+         <children>
+            <Pane  >
+               <children>
+                  <Label fx:id="mainContentDescription"  prefwidth="500.0" text="Your main layout description" wrapText="true"  >
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+          
+            <Label fx:id="mainContentSubDescription" layoutY="30.0" prefwidth="500.0" text="your subheading two your subheading two your subheading two your subheading two your subheading two" wrapText="true" styleClass="dialog-modal-bodytext">
+               <font>
+                  <Font size="11.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>

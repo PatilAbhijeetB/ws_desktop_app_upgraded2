@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<Pane maxHeight="-Infinity" layoutX="0.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1053.0" style="-fx-background-color: white;  -fx-background-radius: 30px" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.project.ProjectView">
+   <children>
+   <!--Start - Project List Left Side Panel -->
+      <Pane layoutX="10.0" layoutY="24.0" prefHeight="58.0" prefWidth="672.0">
+         <children>
+            <Label layoutX="10.0" layoutY="6.0" text="My Projects">
+               <font>
+                   <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Pane layoutX="200.0" layoutY="6.0">
+              <children>
+                  <ComboBox fx:id="projectDropdown" prefHeight="20.0" layoutX="20.0" prefWidth="150.0" promptText="Select Project" style="-fx-background-color: #ECEFFE; -fx-text-fill: #3E5BF2; -fx-prompt-text-fill: #3E5BF2;" styleClass="combo-box-popup">                
+                  </ComboBox>
+                 
+  <Button fx:id="taskCreationBtn" layoutX="185.0" layoutY="0.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="8.0" style="-fx-background-color: #3E5BF2;">
+                     <graphic>
+                        <ImageView fx:id="taskCreationImgView" fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true" >
+                      <image>
+                              <Image url="@../../../../../images/icons/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Task Creation" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="projectRefreshBtn" layoutX="220.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="projectRefreshBtnImageView" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../images/icons/arrowrotateright.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Refresh" />
+                     </tooltip>
+                  </Button>
+               </children>
+
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="50.0">
+         <children>                 
+           <Pane layoutX="1.0" layoutY="1.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="350.0">
+               <children>
+                  <Button fx:id="createMeetingTaskBtn" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" style="-fx-background-color: #FFBF00; -fx-border-radius: 5px;" text="Create Meeting Task" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </Button>
+                
+               </children>
+            </Pane>
+
+             <TabPane prefHeight="360.0" prefWidth="440.0" layoutX="20.0" LayoutY="50.0" tabClosingPolicy="UNAVAILABLE">
+                <tabs>
+                    <Tab text="Ongoing Tasks"  fx:id="currentTaskTab" style="-fx-min-width: 200px; -fx-pref-width: 210px; -fx-pref-height: 30px; -fx-font-weight: bold; -fx-alignment: center;-fx-padding: 0 0 10 70px;"  >
+                        <content>
+                            <ListView fx:id="taskListView" layoutY="50.0" layoutX="10.0" prefHeight="340.0" prefWidth="400.0" style="-fx-padding: 10px 0 0 0;" />
+
+
+                        </content>
+                    </Tab>
+                    <Tab text="Previous Tasks" fx:id="previousTaskTab" style="-fx-min-width: 200px; -fx-pref-width: 210px; -fx-pref-height: 30px; -fx-font-weight: bold;-fx-alignment: center;-fx-padding: 0 0 10 70px;" >
+                        <content>
+
+  <ListView fx:id="prevTaskListView" layoutY="50.0" layoutX="10.0" prefHeight="340.0" prefWidth="400.0" style="-fx-padding: 10px 0 0 0;" />
+
+                        </content>
+                    </Tab>
+             </tabs>
+          
+</TabPane>
+   
+            
+            
+         </children>
+      </Pane>
+      
+     <Pane layoutX="490.0" layoutY="10.0"  prefHeight="200.0" prefWidth="600.0">
+         <children>
+            <ImageView fx:id="attheadLogo" layoutX="1.0" fitWidth="560.0" layoutY="1.0" />
+         </children> 
+     </Pane>
+      <Pane layoutX="520.0" layoutY="150.0"  prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <Pane fx:id="attendanceWidgetPane" prefHeight="500.0" prefWidth="380.0" style="-fx-background-radius: 10; -fx-background-color: white;" >          
+            </Pane>
+         </children>
+      </Pane>       
+   </children>
+</Pane>

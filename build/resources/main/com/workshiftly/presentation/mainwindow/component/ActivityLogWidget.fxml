@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="rootWrapper" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="175.0" style="-fx-background-radius: 10; -fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.component.ActivityLogWidget">
+   <children>
+      <Pane layoutY="5.0" prefHeight="30.0" prefWidth="175.0">
+         <children>
+            <Label alignment="CENTER" layoutY="10.0" prefWidth="175.0" text="Activity Log" textAlignment="RIGHT" textFill="#383838" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Pane>
+      <Pane layoutY="40.0" prefHeight="200.0" prefWidth="175.0" style="-fx-border-color: white; -fx-border-width: 1;">
+         <children>
+            <ListView fx:id="activityListView" minHeight="-Infinity" prefHeight="210.0" prefWidth="175.0" style="-fx-border-color: #E5E5E5 #E5E5E5;" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

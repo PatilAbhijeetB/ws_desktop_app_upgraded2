@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="400.0" prefWidth="500.0" style="-fx-border-color: #FFFFFF; -fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.dashboard.ProductivityWidget">
+   <children>
+      <Label layoutX="15.0" layoutY="15.0" text="Productivity" textFill="#1c1a1a">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="38.0" text="How the productivity of the apps you use change with time." textFill="#737373">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Pane layoutX="10.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="101.0" />
+      <HBox layoutX="30.0" layoutY="75.0" prefHeight="50.0" prefWidth="380.0" spacing="10.0">
+         <children>
+             <Pane prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #00b30042; -fx-background-radius: 4;">
+               <children>
+                  <Label fx:id="productivityPercentageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="08.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="50.0" text="100%" textAlignment="CENTER" textFill="#00b300">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="80.0" text="Productive" textAlignment="CENTER" textFill="#00b300">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #FEEDE6; -fx-background-radius: 4;">
+               <children>
+                  <Label fx:id="unProductivityPercentageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="08.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="50.0" text="100%" textAlignment="CENTER" textFill="#f06856">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="80.0" text="Unproductive" textAlignment="CENTER" textFill="#f06856">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #eceffe; -fx-background-radius: 4;">
+               <children>
+                  <Label fx:id="neutralPercentageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="08.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="50.0" text="100%" textAlignment="CENTER" textFill="#5cb1fa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="03.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="80.0" text="Neutral" textAlignment="CENTER" textFill="#5cb1fa">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #f0f0f1; -fx-background-radius: 4;">
+               <children>
+                  <Label fx:id="unratedPercentageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="08.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="50.0" text="100%" textAlignment="CENTER" textFill="#808080">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="03.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="80.0" text="Unrated" textAlignment="CENTER" textFill="#808080">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <BarChart fx:id="productivityBarChart" layoutX="1.0" layoutY="138.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="257.0" prefWidth="495.0" style="-fx-background-color: transparent;">
+         <xAxis>
+             
+            <CategoryAxis fx:id="dateAxis" endMargin="2.0" label="Dates" startMargin="2.0" tickLabelGap="2.0">
+               <tickLabelFont>
+                  <Font size="7.0" />
+               </tickLabelFont>
+               
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="percentageAxis" minorTickCount="15" label="Productivity Percentage (%)" side="LEFT" tickLength="2.0"  upperBound="75.0">
+               <tickLabelFont>
+                  <Font size="10.0" />
+               </tickLabelFont>
+            </NumberAxis>
+         </yAxis>
+      </BarChart>
+      <DatePicker fx:id="weekPicker" editable="false" layoutX="320.0" layoutY="30.0" opacity="0.75" prefHeight="27.0" prefWidth="162.0" promptText="Pick week" showWeekNumbers="true" style="-fx-border-color: #805ADD; -fx-border-radius: 6; -fx-background-radius: 6; -fx-background-color: transparent; -fx-prompt-text-fill: #805ADD;"  />
+   </children>
+</Pane>

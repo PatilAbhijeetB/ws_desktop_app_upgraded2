@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="rootWrapperPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="540.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.LogoutNavigationView">
+   <children>
+      <Pane fx:id="logoutSubContainer" layoutX="70.0" layoutY="27.0" prefHeight="150.0" prefWidth="400.0">
+         <children>
+            <Label layoutX="11.0" layoutY="34.0" prefHeight="19.0" prefWidth="390.0" text="Are you sure to terminate daily work and log out?">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="logoutBtn" layoutX="210.0" layoutY="75.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0"  styleClass="dialog-modal-primary-btn" text="Yes, Logout" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="noBtn" layoutX="40.0" layoutY="75.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0"  styleClass="dialog-modal-primary-btn" text="No" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</Pane>

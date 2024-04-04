@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="rootWrapper" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #F3F5F7; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.dashboard.AttendanceWidget">
+   <children>
+       
+                
+      <Pane prefHeight="580.0" prefWidth="500.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="12.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="300.0" style="-fx-text-fill: #535353; -fx-font-family: Inter; -fx-font-weight: bold;" text="Your Attendance" textFill="#383838">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+
+           
+            <Pane layoutX="15.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" style="-fx-border-width: 0.5; -fx-border-color: rgba(128, 90, 221, 0.10); -fx-border-radius: 3 0 0 3; -fx-background-color: #fff;">
+               <children>
+                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="5.0" style="-fx-background-color: #805ADD; -fx-background-radius: 3 0 0 3;" text="" textFill="#737373">
+                   
+                  </Label>
+                  <Label layoutX="21.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="80.0" text="Shift In" textFill="#737373">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="shiftInLabel" alignment="CENTER_LEFT" contentDisplay="LEFT" layoutX="21.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="100.0" style="-fx-text-fill: #737373;" text="00.00.00" textAlignment="LEFT" textFill="#3b3b3b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="255.0" layoutY="195.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="231.0" style="-fx-border-width: 0.5; -fx-border-color: rgba(128, 90, 221, 0.10); -fx-border-radius: 3 0 0 3; -fx-background-color: #fff;">
+               <children>
+                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="5.0" style="-fx-background-color: #805ADD; -fx-background-radius: 3 0 0 3;" text="" textFill="#737373">
+                   
+                  </Label>
+                   
+                  <Label layoutX="22.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Actual In" textFill="#737373">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="actualInLabel" alignment="CENTER_LEFT" contentDisplay="LEFT" layoutX="22.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" style="-fx-text-fill: #737373;" text="00.00.00" textAlignment="LEFT" textFill="#3b3b3b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="15.0" layoutY="260.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="225.0" style="-fx-border-width: 0.5; -fx-border-color: rgba(128, 90, 221, 0.10); -fx-border-radius: 3 0 0 3; -fx-background-color: #fff;">
+               <children>
+                   <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="5.0" style="-fx-background-color: #805ADD; -fx-background-radius: 3 0 0 3;" text="" textFill="#737373">
+                   
+                  </Label>
+                  <Label layoutX="21.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="80.0" style="-fx-text-fill: #737373;" text="Shift Out" textFill="#737373">
+                     <font>
+                         <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="shiftOutLabel" alignment="CENTER_LEFT" contentDisplay="LEFT" layoutX="21.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="100.0" style="-fx-text-fill: #737373;" text="00.00.00" textAlignment="LEFT" textFill="#3b3b3b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="255.0" layoutY="260.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="232.0" style="-fx-border-width: 0.5; -fx-border-color: rgba(128, 90, 221, 0.10); -fx-border-radius: 3 0 0 3; -fx-background-color: #fff;">
+               <children>
+                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="5.0" style="-fx-background-color: #805ADD; -fx-background-radius: 3 0 0 3;" text="" textFill="#737373">
+                   
+                  </Label>
+                  <Label layoutX="22.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" style="-fx-text-fill: #737373;" text="Actual Out" textFill="#3b3b3b">
+                     <font>
+                         <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="actualOutLabel" alignment="CENTER_LEFT" contentDisplay="LEFT" layoutX="22.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="100.0" style="-fx-text-fill: #737373;" text="00.00.00" textAlignment="LEFT" textFill="#3b3b3b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="15.0" layoutY="160.0" prefWidth="150.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutX="1.0" prefHeight="20.0" prefWidth="120.0">
+                     <children>
+                        <Label fx:id="statusLabel" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" style="-fx-background-color: #FDE089; -fx-text-fill: #383838;" text="Incomplete" textFill="#3b3b3b">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="1.0" left="5.0" right="5.0" top="1.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="500.0" style="-fx-background-color: #f7e6ff; -fx-background-radius: 12;">
+               <Text fx:id="strMonthName" layoutX="15.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="September" />
+
+               
+               <DatePicker fx:id="datePicker" editable="false" layoutX="332.0" layoutY="11.0" opacity="0.75" prefHeight="27.0" prefWidth="150.0" showWeekNumbers="true" style="-fx-font: 9px &quot;Inter&quot;; -fx-border-color: #805ADD; -fx-border-radius: 6; -fx-background-radius: 6;" />
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="22.0" layoutY="48.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0" />
+               <Rectangle arcHeight="6.0" arcWidth="6.0" fill="#805add" height="52.0" layoutX="84.0" layoutY="48.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-radius: 12; -fx-border-radius: 12;" width="38.0" />
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="146.0" layoutY="48.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0" />
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="208.0" layoutY="48.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0" />
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="265.0" layoutY="48.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0" />
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="330.0" layoutY="48.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0" />
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="393.0" layoutY="48.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="38.0" />
+               
+               <Text fx:id="strCurrentDatem1" layoutX="29.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font></Text>
+               <Text fx:id="strCurrentDaym1" layoutX="29.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mon" />
+               <Text fx:id="strCurrentDate" fill="WHITE" layoutX="91.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font>
+               </Text>
+               <Text fx:id="strCurrentDay" fill="WHITE" layoutX="93.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tue" />
+               <Text fx:id="strCurrentDatep1" layoutX="152.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font></Text>
+               <Text fx:id="strCurrentDayp1" layoutX="153.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wed" />
+               <Text fx:id="strCurrentDatep2" layoutX="217.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font></Text>
+               <Text fx:id="strCurrentDayp2" layoutX="216.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thu" />
+               <Text fx:id="strCurrentDatep3" layoutX="273.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font></Text>
+               <Text fx:id="strCurrentDayp3" layoutX="278.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fri" />
+
+               <Text fx:id="strCurrentDatep4" layoutX="337.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="23" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font></Text>
+               <Text fx:id="strCurrentDayp4" layoutX="340.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sat" />
+               <Text fx:id="strCurrentDatep5" layoutX="401.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font></Text>
+               <Text fx:id="strCurrentDayp5" layoutX="403.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sun" />
+               
+              
+               
+               
+               
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="loadingSpinner" prefHeight="155.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;" visible="false">
+         <children>
+            <ImageView fx:id="loadingSpinnerImg" fitHeight="120.0" fitWidth="200.0" layoutX="33.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

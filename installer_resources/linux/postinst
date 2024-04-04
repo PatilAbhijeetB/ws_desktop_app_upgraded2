@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# software name
+PACKAGE_NAME="workshiftly-desktop-client";
+# default installation path
+INSTALLATION_PATH="/opt/workshiftly-desktop-client";
+# desktop entry name
+DESKTOP_ENTRY_NAME="workshiftly-desktop-client-workshiftly-desktop-client.desktop"  
+# complete desktop entry path reference
+DESKTOP_ENTRY_PATH="${INSTALLATION_PATH}/lib/${DESKTOP_ENTRY_NAME}"
+USER_LOCAL_APP_DIR="/usr/share/applications"
+if test -f "$DESKTOP_ENTRY_PATH"; then
+    cp $DESKTOP_ENTRY_PATH $USER_LOCAL_APP_DIR
+    COPIED_DESKTOP_ENTRY="${USER_LOCAL_APP_DIR}/${DESKTOP_ENTRY_NAME}"
+    chown ${USER:=$(/usr/bin/id -run)}:$USER $COPIED_DESKTOP_ENTRY
+    chmod a+x $COPIED_DESKTOP_ENTRY
+fi
+

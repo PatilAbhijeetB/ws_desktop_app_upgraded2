@@ -1,0 +1,259 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'application'
+    id 'war'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'org.beryx.runtime' version '1.11.4'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+group = 'com.workshiftly'
+
+mainClassName = 'com.workshiftly.application.ApplicationStarter'
+group = 'tcc'
+sourceCompatibility = 1.11
+
+wrapper {
+    gradleVersion = 6.5
+}
+
+//obatin platform operation system project is built up
+//def currentOS = org.gradle.internal.os.OperatingSystem.current();
+def currentOS = org.gradle.internal.os.OperatingSystem.current();
+def platform
+
+if (currentOS.isWindows()) {
+    platform = 'win'
+} else if (currentOS.isLinux()) {
+    platform = 'linux'
+} else if (currentOS.isMacOsX()) {
+    platform = 'mac'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+}
+
+def javaHomePath = "C:/jdk-14.0.2";
+def installerResources = "$projectDir/installer_resources/$platform";
+
+compileJava {
+    options.with {
+        fork = true;
+        forkOptions.executable = "${javaHomePath}/bin/javac"; 
+    }
+}
+
+dependencies {
+    testImplementation     'junit:junit:4.13'
+    
+    implementation "org.openjfx:javafx-base:11.0.2:${platform}"
+    implementation "org.openjfx:javafx-graphics:11.0.2:${platform}"
+    implementation "org.openjfx:javafx-controls:11.0.2:${platform}"
+    implementation "org.openjfx:javafx-web:11.0.2:${platform}"
+    
+    implementation 'com.j256.ormlite:ormlite-core:5.1'
+    implementation 'com.j256.ormlite:ormlite-jdbc:5.1'
+    implementation 'io.github.willena:sqlite-jdbc:3.35.5.3'
+    
+    implementation 'com.1stleg:jnativehook:2.1.0'
+    implementation 'net.java.dev.jna:jna:5.6.0'
+    implementation 'net.java.dev.jna:jna-platform:5.6.0'
+    
+    providedCompile 'com.konghq:unirest-java:3.7.02'
+    implementation 'com.konghq:unirest-object-mappers-gson:3.7.02'
+    
+    implementation 'commons-validator:commons-validator:1.6'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+    implementation 'joda-time:joda-time:2.10.6'
+    
+    implementation 'it.sauronsoftware:junique:1.0.4'
+    implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.2.1'
+    
+    implementation group: 'de.saxsys', name: 'mvvmfx', version: '1.8.0'
+    compile group: 'com.jfoenix', name: 'jfoenix', version: '9.0.10'
+    
+    implementation 'io.sentry:sentry:1.7.30'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    implementation 'it.sauronsoftware:junique:1.0.4'
+
+    implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
+
+     implementation 'com.microsoft.graph:microsoft-graph:0.11.0' // Update to the latest version
+    implementation 'com.microsoft.graph:microsoft-graph-core:0.11.0' // Update to the latest version
+    implementation 'com.microsoft.graph:microsoft-graph-core:3.1.0'
+    implementation 'com.azure:azure-identity:1.11.1' 
+
+    implementation 'com.google.api-client:google-api-client:1.31.0'
+
+    implementation 'org.openjfx:javafx-controls:17'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'org.json:json:20210307'
+
+    implementation 'org.openjfx:javafx-controls:17.0.1'
+    implementation 'org.openjfx:javafx-fxml:17.0.1'
+    implementation 'org.openjfx:javafx-ext:17.0.1'
+implementation 'com.microsoft.graph:microsoft-graph:3.0.0'
+   implementation 'com.azure:azure-identity:1.3.0' // Azure Identity dependency
+    implementation 'com.azure:azure-core:1.17.0' // Azure Core dependency
+  
+  implementation group: 'com.microsoft.azure', name: 'msal4j', version: '1.10.0'
+
+    implementation 'com.microsoft.graph:microsoft-graph:1.12.0'
+   
+
+
+
+
+
+    compile group: 'org.ini4j', name: 'ini4j', version: '0.5.4'
+}
+
+applicationDefaultJvmArgs = [
+                "-Djava.util.logging.config.file=./logging.properties",
+                "-Dsentry.release=$version",
+                "-Dsentry.environment=production",
+                "-Dsentry.tags=OS:windows"
+            ]
+
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.web' ]
+}
+
+jar {
+    manifest {
+        attributes (
+            'Main-class': 'com.workshiftly.application.ApplicationStarter'
+        )
+    }
+    
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+processResources {
+    from 'src/resources/'
+    into 'build/resources/'
+}
+
+// shadow plugin configuration for processing fat/ uber archive
+shadowJar {
+}
+
+runtime {
+    javaHome= javaHomePath
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    modules = [
+        'java.naming',
+        'java.xml', 
+        'java.desktop',
+        'java.scripting',
+        'java.sql',
+        'jdk.crypto.cryptoki',
+        'jdk.unsupported'
+    ]
+    targetPlatform("linux") {
+        jdkHome = javaHomePath != null && file("${javaHomePath}").exists()
+        ? javaHomePath
+        : jdkDownload(openjdk_linux_download_link) {
+            overwrite = false;
+            archiveName = 'open-jdk-14-linux';
+            archiveExtension = 'tar.gz';
+            downloadDir = "${rootDir}/jdks/linux"
+        };
+    }
+    targetPlatform("win") {
+        jdkHome = javaHomePath != null && file("${javaHomePath}").exists()
+        ? javaHomePath
+        : jdkDownload(openjdk_windows_download_link) {
+            overwrite = false;
+            archiveName = 'open-jdk-14-windows';
+            archiveExtension = 'zip';
+            downloadDir = "${rootDir}/jdks/win"
+        };
+    }
+    targetPlatform("macos") {
+        jdkHome = javaHomePath != null && file("${javaHomePath}").exists()
+        ? javaHomePath
+        : jdkDownload(openjdk_macos_download_link) {
+            overwrite = false;
+            archiveName = 'open-jdk-14-macos';
+            archiveExtension = 'tar.gz';
+            downloadDir = "${rootDir}/jdks/mac"
+        };
+    }
+    
+    jpackage {
+        launcher {
+            jvmArgs = [
+                "-Djava.util.logging.config.file=./logging.properties",
+                "-Dsentry.release=$version",
+                "-Dsentry.environment=production",
+                "-Dsentry.tags=OS:windows"
+            ]
+        }
+        skipInstaller = false
+        jpackageHome = javaHomePath
+        targetPlatformName = currentOS.isMacOsX() ? 'macos' : platform
+        //imageName = 'workshiftly-desktop-client'
+       //installerName = 'workshiftly-desktop-client'
+        imageName = 'WorkShiftly'
+        installerName = 'WorkShiftly'
+        imageOutputDir = file("$buildDir/jpackage_image")
+        installerOutputDir = file("$buildDir/jpackage_installer")
+        resourceDir = file("$installerResources")
+      
+        if (currentOS.isLinux()) {
+            installerOptions = [
+                "--verbose", "--linux-shortcut",
+                "--linux-package-deps", "xdotool",
+                "--resource-dir", "$installerResources",
+                "--app-version", "2.6.0",
+                "--linux-menu-group", "Utility",
+                "--linux-shortcut"
+            ]
+            installerType = "deb"
+            imageOptions += [
+                "--icon", "$installerResources/workdhiftlylinyx.png"
+            ]
+        }
+        
+        if (currentOS.isWindows()) {
+            installerType = 'msi'
+            appVersion = "2.6.0"
+            installerOptions = [
+                '--win-menu', '--win-shortcut', '--win-dir-chooser', '--win-per-user-install'
+            ]
+            
+            imageOptions=['--icon', "$projectDir/installer_resources/static/Workshiftly.ico"]
+        }
+        
+        if (currentOS.isMacOsX()) {
+            installerType = 'dmg'
+            appVersion = "2.6.0"
+            installerOptions = [
+                '--mac-package-name', 'workshiftly'
+            ]
+            imageOptions=['--icon', "$projectDir/installer_resources/static/workshiftly_mac.icns"]
+            
+        }
+        
+        
+    }
+}
+
+task packageApplication {
+    dependsOn 'clean'
+    dependsOn 'build'
+    dependsOn 'jpackage'
+    tasks.findByName('build').mustRunAfter 'clean'
+    tasks.findByName('jpackage').mustRunAfter 'build'
+}

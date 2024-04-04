@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootWrapper" prefWidth="375.0" spacing="2.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.meeting.MeetingInfoModalView">
+   <children>
+      <HBox prefHeight="20.0" prefWidth="375.0">
+         <children>
+            <Label text="Meeting Information">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Pane fx:id="formElementWrapper" prefHeight="240.0" prefWidth="375.0">
+         <children>
+            <Label fx:id="formErrorTxt" maxWidth="-Infinity" prefWidth="360.0" textFill="#a93226">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <Pane fx:id="subFormContentWrapper" layoutY="10.0">
+               <children>
+                  <Pane prefHeight="50.0" prefWidth="375.0">
+                     <children>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="100.0">
+                           <children>
+                              <Label layoutY="15.0" prefWidth="46.0" style="-fx-font-weight: bold; -fx-font-size: 11px;" text="Project" />
+                              <Label layoutX="46.0" layoutY="13.0" maxWidth="-Infinity" minHeight="-Infinity" text="*" textFill="#cb4335" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="100.0" prefHeight="50.0" prefWidth="250.0">
+                           <children>
+                              <ComboBox fx:id="projectSelectInput" layoutY="10.0" prefHeight="30.0" prefWidth="250.0" promptText="Select a project" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="60.0" prefHeight="120.0" prefWidth="375.0">
+                     <children>
+                        <Label layoutX="107.0" layoutY="-2.0" text="*" textFill="#cb4335" />
+                        <Label prefWidth="106.0" style="-fx-font-weight: bold; -fx-font-size: 11px;" text="Meeting Purpose" />
+                        <Label fx:id="meetingPurposeCharCount" layoutX="290.0" layoutY="100.0" text="Characters: 200">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="meetingSummaryTxtInput" layoutX="5.0" layoutY="20.0" prefHeight="80.0" prefWidth="350.0" promptText="Enter Meeting purpose" wrapText="true" />
+                     </children>
+                  </Pane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+            <Pane fx:id="participantMainWrapper" layoutY="180.0">
+               <children>
+                  <Pane fx:id="formInputParticipantWrapper" prefHeight="50.0" prefWidth="375.0">
+                     <children>
+                        <Pane fx:id="participantTxtInputWrapper" layoutX="100.0" prefHeight="50.0" prefWidth="250.0">
+                           <children>
+                              <TextField fx:id="participantTxtInput" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="Enter participant Name" />
+                              <Label fx:id="participantSlotCountLbl" layoutX="150.0" layoutY="40.0" text="Available slots:10">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="participantLblWrapper" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="100.0">
+                           <children>
+                              <Label layoutY="15.0" prefWidth="120.0" style="-fx-font-weight: bold; -fx-font-size: 11px;" text="Participant/s" />
+                           </children>
+                        </Pane>
+                        <ImageView fx:id="addParticipantPlusMark" fitHeight="20.0" fitWidth="20.0" layoutX="325.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <HBox fx:id="participantListViewHbox" prefHeight="160.0" prefWidth="375.0" spacing="1.0">
+         <children>
+            <ListView fx:id="participantLeftList" prefHeight="160.0" prefWidth="185.0" />
+            <ListView fx:id="participantRightList" prefHeight="160.0" prefWidth="185.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="meetingBtnWrapper" prefHeight="50.0" prefWidth="375.0">
+         <children>
+            <VBox fx:id="meetingTimeWrapper">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="160.0" style="-fx-font-size: 10px;" text="Elapsed Time" textFill="#17202a">
+                     <font>
+                        <Font name="System Bold Italic" size="8.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="elapsedTimeCounter" prefWidth="160.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="00: 00: 00" />
+               </children>
+            </VBox>
+            <JFXButton fx:id="startMeetingBtn" alignment="CENTER" buttonType="RAISED" prefHeight="40.0" prefWidth="90.0" ripplerFill="#FFFFFF" style="-fx-background-color: #3E5BF2;" textFill="#FFFFFF" text="Start Meeting" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="cancelMeetingBtn" alignment="CENTER" buttonType="RAISED" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #707070;" textFill="#FFFFFF"  text="Cancel" >
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

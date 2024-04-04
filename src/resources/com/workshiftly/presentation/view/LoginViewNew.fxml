@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+
+
+<Pane fx:id="loginWindoeRootPane"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1063.0" styleClass="auth-screen-root-wrapper" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.view.LoginViewNew">
+   <children>
+    
+      <Pane fx:id="authScImageWrapper" layoutX="60.0" layoutY="288.0" prefHeight="200.0" prefWidth="300.0">
+         <children>
+            <ImageView fx:id="authScreenAppLogo" fitHeight="97.0" fitWidth="344.0" pickOnBounds="true" preserveRatio="true">
+             <image>
+                  <Image url="@../../../../images/logo 1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="590.0" layoutY="97.0" prefHeight="477.0" prefWidth="413.0" styleClass="auth-screen-input-wrapper" >
+         <children>
+              <Pane prefHeight="96.0" layoutX="50.0" layoutY="65.0" prefWidth="250.0">
+                        <children>
+                        <Label fx:id="formTitle"  prefHeight="32.0" prefWidth="256.0" styleClass="auth-FormTitle-label" text="Log In" textFill="#141414">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        </children>
+                   </Pane>
+            <Pane layoutY="150.0"  layoutX="30.0" prefWidth="350.0">
+               <children>
+                 
+                  <Pane prefHeight="96.0" layoutX="12.0"  prefWidth="330.0">
+                     <children>
+                        <Label fx:id="emailErrorTxt"  layoutX="12.0" layoutY="55.0" prefHeight="32.0" prefWidth="316.0" styleClass="form-error-lbl-text" textFill="#f51f1f" wrapText="true">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="emailTextInput" layoutY="11.0" prefHeight="30.0" prefWidth="300.0" promptText="Enter your email" styleClass="auth-screen-text-input">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        <Line startX="12" startY="51" endX="320" endY="51" strokeWidth="1" styleClass="custom-line" />
+
+                        <Label fx:id="emailTextInputLbl" layoutX="9.0" prefHeight="23.0" style="-fx-background-color: white;" styleClass="auth-input-label" text="Email" 
+                             textFill="#141414">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="55.0" prefHeight="23.0" prefWidth="10.0" style="-fx-background-color: white;" text="*" 
+                             textFill="#FF0004">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="100.0" layoutX="12.0" prefHeight="96.0" prefWidth="350.0">
+                     <children>
+                        <PasswordField fx:id="passwordTextInout" layoutY="11.0" prefHeight="30.0" prefWidth="300.0" promptText="Enter your password" styleClass="auth-screen-text-input">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </PasswordField>
+                        <TextField fx:id="passwordshow"  layoutY="11.0" prefHeight="30.0" prefWidth="300.0" styleClass="auth-screen-text-input">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="eyeButton" layoutX="280.0" layoutY="20.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;">
+ <graphic>                       
+                            <ImageView fx:id="eyeLogo" layoutX="300.0" layoutY="20.0" fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+             <image>
+                  <Image url="@../../../../images/eyeOpen.png" />
+               </image>
+            </ImageView>
+ </graphic>
+                        </Button>
+              
+                         
+                        <Line startX="12" startY="51" endX="320" endY="51"  strokeWidth="1" styleClass="custom-line" />
+
+                        <Label fx:id="emailTextInputLbl" layoutX="9.0" prefHeight="23.0" style="-fx-background-color: white;" styleClass="auth-input-label" text="Password" textFill="#141414">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                         <Label layoutX="84.0" prefHeight="23.0" prefWidth="10.0" style="-fx-background-color: white;" text="*" 
+                             textFill="#FF0004">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="passwordErrorTxt" layoutX="12.0"  layoutY="52.0" prefHeight="32.0" prefWidth="300.0" styleClass="auth-input-error-label" textFill="#f51f1f" wrapText="true">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="loginFormButton" layoutX="22.0" layoutY="200.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="310.0" styleClass="auth-screen-button" text="Log In" />
+                  <HBox layoutY="255.0" layoutX="18.0" prefHeight="28.0" prefWidth="300.0" styleClass="auth-screen-hyperlink-wrapper">
+                     <children>
+                        <Hyperlink fx:id="forgetPasswordLink" prefHeight="24.0" prefWidth="150.0" text="Forgot Password?">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="signupLink" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="24.0" prefWidth="166.0" text="Don't have an account ? Sign Up" textAlignment="RIGHT">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>

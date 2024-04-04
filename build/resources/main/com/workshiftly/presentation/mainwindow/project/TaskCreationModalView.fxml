@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootWrappr" styleClass="rounded-dialog" prefHeight="500.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.workshiftly.presentation.mainwindow.project.TaskCreationModalView" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+   <children>
+      <Pane fx:id="headerContainer" prefHeight="30.0" prefWidth="500.0" style="-fx-padding: 10 0 10 0;-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; ">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="500.0" text="Task">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <padding>
+                  <Insets bottom="3.0" top="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="TaskErrorWrapper" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="FormErrorTxt" alignment="CENTER" text="Task Titlte is Required Field" textFill="#f50303">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Pane>
+      <VBox fx:id="formDataContainer" alignment="CENTER" layoutX="70.0" prefHeight="340.0" prefWidth="450.0" style="-fx-border-width: 0.5px; -fx-border-color: #999999 white; -fx-border-style: solid;-fx-padding:0 30 0 0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0" spacing="0.0">
+               <children>
+                  <Label text="Task Type">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                   <Label prefHeight="23.0" prefWidth="39.0" style="-fx-background-color: white;" text="*" 
+                             textFill="#FF0004">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                  <ComboBox fx:id="taskTypeSelector" layoutX="200.0" prefWidth="200.0" promptText="select a type" style="-fx-background-color: white; -fx-border-color: black;" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="50.0" alignment="CENTER_LEFT" prefWidth="500.0" spacing="0.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Label text="Project" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                   <Label prefHeight="23.0" prefWidth="54.0" style="-fx-background-color: white;" text="*" 
+                             textFill="#FF0004">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                  <ComboBox fx:id="projectTypeSelector" prefWidth="350.0" promptText="select a project" style="-fx-background-color: white; -fx-border-color: black;" />
+               </children>
+            </HBox>
+            <VBox fx:id="taskFormDataElementContainer">
+               <children>
+                  <HBox prefHeight="50.0" alignment="CENTER_LEFT" prefWidth="550.0" spacing="0.0">
+                     <children>
+                        <Label text="Title">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="23.0" prefWidth="68.0" layoutX="10.0" layoutY="1.0" style="-fx-background-color: white;" text="*" 
+                             textFill="#FF0004">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="titleTxtField" prefWidth="350.0" promptText="Enter text" style="-fx-background-color: white; -fx-border-color: black;">
+                           <font>
+                              <Font size="12.0" />
+                           </font></TextField>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" alignment="CENTER_LEFT" prefWidth="200.0" spacing="0.0">
+                     <children>
+                        <Label  text="Description">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: white;" text="" 
+                             textFill="#FF0004">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="descriptTxtArea" prefHeight="200.0" prefWidth="350.0" promptText="Enter text" style="-fx-background-color: white; -fx-border-color: black;">
+                           <font>
+                              <Font size="12.0" />
+                           </font></TextArea>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="50.0" alignment="CENTER_LEFT" prefWidth="200.0" spacing="0.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="Due Date">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="23.0" prefWidth="42.0" style="-fx-background-color: white;" text="*" 
+                             textFill="#FF0004">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="dueDatePicker" editable="false" prefWidth="205.0" promptText="select a date" style="-fx-background-color: white; -fx-border-color: black;" styleClass="date-picker-popup-task-create" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" alignment="CENTER_LEFT" prefWidth="200.0" spacing="0.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="estimationTxtInput" text="Estimation">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="23.0" prefWidth="35.0" style="-fx-background-color: white;" text="*" 
+                             textFill="#FF0004">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <TextField fx:id="daysEstimationInput" alignment="CENTER" prefWidth="40.0" promptText="0" style="-fx-background-color: white; -fx-border-color: black;">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="days">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="hoursEstimationInput" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefWidth="40.0" promptText="0" style="-fx-background-color: white; -fx-border-color: black;">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="55.0" layoutY="16.0" text="hours">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="minutesEstimationInput" alignment="CENTER" layoutX="90.0" layoutY="10.0" prefWidth="40.0" promptText="0" style="-fx-background-color: white; -fx-border-color: black;" text="0">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="130.0" layoutY="16.0" text="minutes">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <HBox fx:id="footerContainer" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0" style="-fx-padding: 20 20 20 0;">
+         <children>
+            <JFXButton fx:id="createBtn" buttonType="RAISED" styleClass="dialog-modal-primary-btn"  prefWidth="120.0" text="Add" >
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+             
+            </JFXButton>
+            <JFXButton fx:id="cancelBtn" buttonType="RAISED"  prefWidth="120.0" text="Cancel" styleClass="dialog-modal-primary-btn" >
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+              
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>
